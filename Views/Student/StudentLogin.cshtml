@@ -1,0 +1,29 @@
+﻿@using Student_Demo.Models
+
+@model Student_Demo.Models.Student
+
+@{
+    ViewBag.Title = "StudentLogin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>StudentLogin</h2>
+
+<form>
+    <fieldset>
+
+        <legend>Login</legend>
+
+        StudentId:     &nbsp;&nbsp;&nbsp;     @Html.EditorFor(m => m.StudentId)<br /><br />
+        StudentName:   &nbsp;&nbsp;&nbsp;     @Html.EditorFor(m => m.StudentName)<br /><br />
+        Dob:           &nbsp;&nbsp;&nbsp;     @Html.EditorFor(m => m.Dob)<br /><br />
+        Age:           &nbsp;&nbsp;&nbsp;     @Html.EditorFor(m => m.Age)<br /><br />
+        StudentGender: &nbsp;&nbsp;&nbsp;     @Html.EditorFor(m => m.StudentGender)<br /><br />
+        Password:      &nbsp;&nbsp;&nbsp;     @Html.EditorFor(m => m.Password)<br /><br />
+        isNewlyEnrolled:  &nbsp;&nbsp;&nbsp;  @Html.EditorFor(m => m.isNewlyEnrolled)<br /><br />
+
+        <button type="button" class="btn btn-success">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-danger">Cancel</button>
+
+    </fieldset>
+</form>

@@ -1,0 +1,89 @@
+﻿@using Student_Demo.Models
+
+@model Student_Demo.Models.Student
+
+
+@{
+    ViewBag.Title = "HtmlHelp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1><u>HtmlHelp</u></h1>
+
+<h1>Text Boxes using HTML Helper</h1>
+
+@Html.TextBoxFor(m => m.StudentName)<br /><br />
+@Html.TextBoxFor(m => m.StudentName, new { @class = "form-control" })<br />
+@Html.TextBox("StudentName")<br />
+
+
+
+<h1>Text Area using HTML Helper</h1>
+
+@Html.TextAreaFor(m => m.Description)
+@Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+@Html.TextArea("Description", "This is Dummy Description", new { @class = "form-control" })
+
+<h1>CheckBoxes Using Html Helper</h1>
+
+@Html.CheckBoxFor(m => m.isActive, new { @class = "form-control" })
+@Html.CheckBox("isActive", true)
+<br />
+
+
+<h1>Radio Buttons using Html Helper</h1>
+@*
+    @Html.RadioButtonFor(m => m.Gender, "Male")
+    @Html.RadioButtonFor(m => m.Gender, "Female")
+*@
+Male : @Html.RadioButton("Gender", "Male")
+<br />
+Female : @Html.RadioButton("Gender", "Female")
+<br />
+<br />
+
+
+<h1>DropDown List using Html Helper</h1>
+@Html.DropDownListFor(m => m.StudentGender,
+    new SelectList(Enum.GetValues(typeof(Gender))), "Select Gender")
+
+@Html.DropDownList("StudentGender",
+    new SelectList(Enum.GetValues(typeof(Gender))), "Select Gender", new { @class = "form-control" })
+
+<h1>Hidden Field using Html Helper</h1><br /><br />
+@Html.HiddenFor(m => m.StudentId)
+@Html.Hidden("StudentId")
+
+
+<h1>Password Field using Html Helper</h1>
+@Html.PasswordFor(m => m.Password)
+@Html.Password("Password", new { @class = "form-control" })
+
+
+<h1>Display using Html Helper</h1><br /><br />
+@Html.DisplayFor(m => m.StudentName)
+@Html.Display("StudentName")
+
+
+<h1>Label using Html Helper</h1>
+@Html.LabelFor(m => m.StudentName)<br />
+@Html.Label("StudentName")<br />
+@Html.Label("StudentName","Student Name")<br />
+
+
+<h1>EditorFor using Html Helper</h1>
+StudentId:          @Html.EditorFor(m => m.StudentId)<br />
+StudentName:        @Html.EditorFor(m => m.StudentName)<br />
+Dob:                @Html.EditorFor(m => m.Dob)<br />
+Age:                @Html.EditorFor(m => m.Age)<br />
+StudentGender:      @Html.EditorFor(m => m.StudentGender)<br />
+Password:           @Html.EditorFor(m => m.Password)<br />
+isNewlyEnrolled:    @Html.EditorFor(m => m.isNewlyEnrolled)<br /><br /><br />
+
+StudentId:          @Html.EditorFor(m => m.StudentId)<br />
+StudentName:        @Html.EditorFor(m => m.StudentName)<br />
+Dob:                @Html.EditorFor(m => m.Dob)<br />
+Age:                @Html.EditorFor(m => m.Age)<br />
+StudentGender:      @Html.EditorFor(m => m.StudentGender)<br />
+Password:           @Html.EditorFor(m => m.Password)<br />
+isNewlyEnrolled:    @Html.EditorFor(m => m.isNewlyEnrolled)<br />
